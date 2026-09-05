@@ -58,3 +58,9 @@ Forms are reserved for login, dialogs, confirmations, and other modal workflows.
 Initial direction: Dark theme.
 
 Theme colors, typography, spacing, and reusable visual styles will be centralized later in the Theme folder.
+
+## Reusable Controls
+
+### NavButton
+A self-contained sidebar navigation item with three visual states: Normal, Hover, Active.
+Exposes `NavText`, `IsActive`, and a `NavClicked` event, hiding all internal layout and color logic from consumers.
