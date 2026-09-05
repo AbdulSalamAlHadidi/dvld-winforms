@@ -28,36 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlSidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblDVLD = new System.Windows.Forms.Label();
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlSidebar.SuspendLayout();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.lblDVLD = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
+            this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlSidebar
-            // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.pnlSidebar.Controls.Add(this.lblDVLD);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(16, 20, 16, 20);
-            this.pnlSidebar.Size = new System.Drawing.Size(250, 681);
-            this.pnlSidebar.TabIndex = 0;
-            // 
-            // lblDVLD
-            // 
-            this.lblDVLD.AutoSize = true;
-            this.lblDVLD.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDVLD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.lblDVLD.Location = new System.Drawing.Point(19, 20);
-            this.lblDVLD.Name = "lblDVLD";
-            this.lblDVLD.Size = new System.Drawing.Size(204, 90);
-            this.lblDVLD.TabIndex = 1;
-            this.lblDVLD.Text = "DVLD \nDriver & Vehicle License Department";
             // 
             // pnlTopbar
             // 
@@ -90,6 +68,28 @@
             this.pnlContent.Size = new System.Drawing.Size(934, 611);
             this.pnlContent.TabIndex = 2;
             // 
+            // pnlSidebar
+            // 
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.pnlSidebar.Controls.Add(this.lblDVLD);
+            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(16, 20, 16, 20);
+            this.pnlSidebar.Size = new System.Drawing.Size(250, 681);
+            this.pnlSidebar.TabIndex = 3;
+            // 
+            // lblDVLD
+            // 
+            this.lblDVLD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDVLD.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDVLD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.lblDVLD.Location = new System.Drawing.Point(16, 20);
+            this.lblDVLD.Name = "lblDVLD";
+            this.lblDVLD.Size = new System.Drawing.Size(218, 226);
+            this.lblDVLD.TabIndex = 3;
+            this.lblDVLD.Text = "DVLD \nDriver & Vehicle License Department";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -106,20 +106,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DVLD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnlSidebar.ResumeLayout(false);
-            this.pnlSidebar.PerformLayout();
             this.pnlTopbar.ResumeLayout(false);
             this.pnlTopbar.PerformLayout();
+            this.pnlSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlSidebar;
         private System.Windows.Forms.Panel pnlTopbar;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Label lblPageTitle;
+        private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Label lblDVLD;
     }
 }
