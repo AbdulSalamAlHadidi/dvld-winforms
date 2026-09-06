@@ -50,13 +50,13 @@
             this.tblRows.ColumnCount = 2;
             this.tblRows.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tblRows.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblRows.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblRows.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblRows.Location = new System.Drawing.Point(20, 50);
             this.tblRows.Name = "tblRows";
             this.tblRows.RowCount = 2;
             this.tblRows.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblRows.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblRows.Size = new System.Drawing.Size(300, 0);
+            this.tblRows.Size = new System.Drawing.Size(300, 30);
             this.tblRows.TabIndex = 1;
             // 
             // DetailsCard

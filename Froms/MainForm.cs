@@ -46,7 +46,11 @@ namespace DVLD.Desktop.Froms
             navSettings = CreateNavButton("Settings");
 
             navDashboard.NavClicked += (s, e) => NavigateAndHighlight(navDashboard, new DashboardControl(), "Dashboard");
-            navPeople.NavClicked += (s, e) => NavigateAndHighlight(navPeople, new PeopleControl(), "People");         
+            navPeople.NavClicked += (s, e) =>
+            {
+                var peoplePage = new PeopleControl { Navigation = _navigationService };
+                NavigateAndHighlight(navPeople, peoplePage, "People");
+            };          
             navDrivers.NavClicked += (s, e) => MessageBox.Show("Drivers page not implemented yet.");
             navApplications.NavClicked += (s, e) => MessageBox.Show("Applications page not implemented yet.");
             navLicenses.NavClicked += (s, e) => MessageBox.Show("Licenses page not implemented yet.");

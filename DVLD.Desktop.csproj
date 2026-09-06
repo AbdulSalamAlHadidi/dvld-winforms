@@ -70,6 +70,12 @@
     <Compile Include="Controls\PageHeader.Designer.cs">
       <DependentUpon>PageHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Froms\Dialogs\ConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms\Dialogs\ConfirmDialog.Designer.cs">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Froms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     <Compile Include="Pages\People\PeopleControl.Designer.cs">
       <DependentUpon>PeopleControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\People\PersonDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\People\PersonDetailsControl.Designer.cs">
+      <DependentUpon>PersonDetailsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\People\PersonRow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +117,9 @@
     <EmbeddedResource Include="Controls\PageHeader.resx">
       <DependentUpon>PageHeader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Froms\Dialogs\ConfirmDialog.resx">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Froms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\People\PeopleControl.resx">
       <DependentUpon>PeopleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\People\PersonDetailsControl.resx">
+      <DependentUpon>PersonDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,7 +156,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Froms\Dialogs\" />
     <Folder Include="Helper\" />
     <Folder Include="Pages\Applications\" />
     <Folder Include="Pages\Drivers\" />

@@ -8,7 +8,7 @@ namespace DVLD.Desktop.Controls
         public DetailsCard()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
+
         }
 
         public void AddRow(string label, string value)

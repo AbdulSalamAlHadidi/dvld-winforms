@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DVLD.Desktop.Navigation
 {
-    internal class NavigationService
+    public class NavigationService
     {
         private readonly Panel _contentPanel;
         private readonly Stack<UserControl> _history = new Stack<UserControl>();
