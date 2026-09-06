@@ -76,7 +76,7 @@ namespace DVLD.Desktop.Froms
 
         private void NavigateAndHighlight(NavButton clickedButton, UserControl page, string title)
         {
-            _navigationService.NavigateTo(page);
+            _navigationService.ResetTo(page);
             lblPageTitle.Text = title;
 
             if (_activeNavButton != null)
