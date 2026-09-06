@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FilterBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterBar.Designer.cs">
+      <DependentUpon>FilterBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NavButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\NavButton.Designer.cs">
       <DependentUpon>NavButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHeader.Designer.cs">
+      <DependentUpon>PageHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="Froms\MainForm.cs">
       <SubType>Form</SubType>
@@ -67,8 +79,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\FilterBar.resx">
+      <DependentUpon>FilterBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\NavButton.resx">
       <DependentUpon>NavButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageHeader.resx">
+      <DependentUpon>PageHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Froms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
