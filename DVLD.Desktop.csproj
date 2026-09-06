@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DetailsCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DetailsCard.Designer.cs">
+      <DependentUpon>DetailsCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FilterBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Pages\People\PersonRow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\DetailsCard.resx">
+      <DependentUpon>DetailsCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterBar.resx">
       <DependentUpon>FilterBar.cs</DependentUpon>
     </EmbeddedResource>

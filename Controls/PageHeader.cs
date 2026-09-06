@@ -6,11 +6,13 @@ namespace DVLD.Desktop.Controls
     public partial class PageHeader : UserControl
     {
         public event EventHandler ActionClicked;
+        public event EventHandler BackClicked;
         public PageHeader()
         {
             InitializeComponent();
             this.Dock = DockStyle.Top;
             btnAction.Click += (s, e) => ActionClicked?.Invoke(this, EventArgs.Empty);
+            btnBack.Click += (s, e) => BackClicked?.Invoke(this, EventArgs.Empty);
         }
 
         public string Title
@@ -29,6 +31,12 @@ namespace DVLD.Desktop.Controls
         {
             get => btnAction.Visible;
             set => btnAction.Visible = value;
+        }
+
+        public bool ShowBackButton
+        {
+            get => btnBack.Visible;
+            set => btnBack.Visible = value;
         }
     }
 }

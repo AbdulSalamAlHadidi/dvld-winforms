@@ -30,15 +30,15 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAction = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.lblTitle.Location = new System.Drawing.Point(12, 18);
+            this.lblTitle.Location = new System.Drawing.Point(40, 18);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(72, 32);
             this.lblTitle.TabIndex = 0;
@@ -61,11 +61,30 @@
             this.btnAction.Text = "Button";
             this.btnAction.UseVisualStyleBackColor = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.btnBack.Size = new System.Drawing.Size(40, 64);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "←";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            // 
             // PageHeader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.lblTitle);
             this.MaximumSize = new System.Drawing.Size(9999, 64);
@@ -81,5 +100,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.Button btnBack;
     }
 }
