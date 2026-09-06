@@ -64,3 +64,16 @@ Theme colors, typography, spacing, and reusable visual styles will be centralize
 ### NavButton
 A self-contained sidebar navigation item with three visual states: Normal, Hover, Active.
 Exposes `NavText`, `IsActive`, and a `NavClicked` event, hiding all internal layout and color logic from consumers.
+
+### PageHeader
+Displays a page title and an optional primary action button. Exposes `Title`, `ActionText`, `ShowAction`, and an `ActionClicked` event.
+
+### FilterBar
+A single search box with a search button. Exposes `SearchRequested(string)`, raised on button click or Enter key.
+
+## Pages
+
+### PeopleControl
+First fully functional page. Uses mock data (`MockPeopleData`) to simulate the future Business Layer response, following the pattern:
+UI → Business Layer Method → Result → UI
+This mock layer will be removed once `PersonService` exists in the Business Layer.
