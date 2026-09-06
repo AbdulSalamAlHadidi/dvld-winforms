@@ -47,6 +47,11 @@ Main navigation sections:
 6. Users
 7. Settings
 
+`NavigationService` now supports:
+- `NavigateTo(page)` — pushes current page to history (drill-down).
+- `ResetTo(page)` — clears history (top-level sidebar navigation).
+- `GoBack()` — returns to the previous page with its state preserved.
+
 ## Core UI Principle
 
 MainForm hosts the application shell.
@@ -68,8 +73,18 @@ Exposes `NavText`, `IsActive`, and a `NavClicked` event, hiding all internal lay
 ### PageHeader
 Displays a page title and an optional primary action button. Exposes `Title`, `ActionText`, `ShowAction`, and an `ActionClicked` event.
 
+Now also supports `ShowBackButton` and a `BackClicked` event for drill-down pages.
+
 ### FilterBar
 A single search box with a search button. Exposes `SearchRequested(string)`, raised on button click or Enter key.
+
+### DetailsCard
+Displays a titled group of label/value rows. Used to present entity details without a wide, cluttered table (Person, and later Driver/License).
+
+## Dialogs
+
+### ConfirmDialog
+Modal confirmation form for destructive actions. Usage: `ConfirmDialog.Confirm(title, message)` returns true only when the user explicitly confirms.
 
 ## Pages
 

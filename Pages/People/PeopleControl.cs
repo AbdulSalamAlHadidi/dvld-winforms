@@ -158,7 +158,10 @@ namespace DVLD.Desktop.Pages.People
                     {
                         // حذف وهمي: إزالة من المصدر الحالي (القائمة المعروضة)
                         var currentList = (List<PersonRow>)dgvPeople.DataSource;
-                        currentList.Remove(person);
+
+                        if(currentList.Remove(person))
+                        MessageBox.Show($"{person.FullName} deleted Successfully.");
+
                         LoadPeople(currentList); // إعادة تحميل القائمة المحدثة
                     }
                     break;
