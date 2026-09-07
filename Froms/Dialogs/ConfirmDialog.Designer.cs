@@ -36,7 +36,6 @@
             // lblMessage
             // 
             this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.lblMessage.Location = new System.Drawing.Point(20, 30);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(360, 60);
@@ -70,7 +69,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(384, 141);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);

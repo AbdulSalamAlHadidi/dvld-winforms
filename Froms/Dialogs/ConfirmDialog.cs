@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using DVLD.Desktop.Theme;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DVLD.Desktop.Froms.Dialogs
@@ -14,10 +15,7 @@ namespace DVLD.Desktop.Froms.Dialogs
             btnConfirm.Text = confirmText;
             btnCancel.Text = cancelText;
 
-            btnConfirm.BackColor = Color.FromArgb(239, 68, 68);
-            btnConfirm.ForeColor = Color.FromArgb(249, 250, 251);
-            btnCancel.BackColor = Color.FromArgb(55, 65, 81);
-            btnCancel.ForeColor = Color.FromArgb(249, 250, 251);
+            ApplyTheme();
 
             btnConfirm.Click += (s, e) => { DialogResult = DialogResult.Yes; Close(); };
             btnCancel.Click += (s, e) => { DialogResult = DialogResult.Cancel; Close(); };
@@ -29,6 +27,21 @@ namespace DVLD.Desktop.Froms.Dialogs
             {
                 return dialog.ShowDialog() == DialogResult.Yes;
             }
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            BackColor = theme.Surface;
+            
+            lblMessage.ForeColor = theme.TextPrimary;
+
+            btnConfirm.BackColor = theme.Danger;
+            btnConfirm.ForeColor = theme.TextPrimary;
+            
+            btnCancel.BackColor = theme.Border;
+            btnCancel.ForeColor = theme.TextPrimary;
         }
     }
 }

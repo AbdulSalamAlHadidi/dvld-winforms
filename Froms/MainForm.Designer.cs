@@ -39,7 +39,6 @@
             // 
             // pnlTopbar
             // 
-            this.pnlTopbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.pnlTopbar.Controls.Add(this.lblPageTitle);
             this.pnlTopbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopbar.Location = new System.Drawing.Point(250, 0);
@@ -52,7 +51,6 @@
             // 
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.lblPageTitle.Location = new System.Drawing.Point(24, 22);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(118, 30);
@@ -70,7 +68,6 @@
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.pnlSidebar.Controls.Add(this.lblDVLD);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
@@ -83,7 +80,6 @@
             // 
             this.lblDVLD.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDVLD.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDVLD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.lblDVLD.Location = new System.Drawing.Point(16, 20);
             this.lblDVLD.Name = "lblDVLD";
             this.lblDVLD.Size = new System.Drawing.Size(218, 226);
@@ -94,7 +90,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlTopbar);

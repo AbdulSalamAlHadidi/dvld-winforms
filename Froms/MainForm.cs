@@ -1,4 +1,9 @@
-﻿using System;
+﻿using DVLD.Desktop.Controls;
+using DVLD.Desktop.Navigation;
+using DVLD.Desktop.Pages.Dashboard;
+using DVLD.Desktop.Pages.People;
+using DVLD.Desktop.Theme;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,10 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DVLD.Desktop.Navigation;
-using DVLD.Desktop.Pages.Dashboard;
-using DVLD.Desktop.Controls;
-using DVLD.Desktop.Pages.People;
 
 namespace DVLD.Desktop.Froms
 {
@@ -26,6 +27,8 @@ namespace DVLD.Desktop.Froms
             BuildSidebarNavigation();
             _navigationService = new NavigationService(pnlContent);
             NavigateAndHighlight(navDashboard, new DashboardControl(), "Dashboard");
+
+            ApplyTheme();
         }
         private NavButton navDashboard;
         private NavButton navPeople;
@@ -88,6 +91,20 @@ namespace DVLD.Desktop.Froms
 
             clickedButton.IsActive = true;
             _activeNavButton = clickedButton;
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            pnlSidebar.BackColor = theme.Sidebar;
+            pnlTopbar.BackColor = theme.Surface;
+            pnlContent.BackColor = theme.Background;
+            
+            BackColor = theme.Background;
+            
+            lblPageTitle.ForeColor = theme.TextPrimary;
+            lblDVLD.ForeColor = theme.TextPrimary;
         }
     }
 }
