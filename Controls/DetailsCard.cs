@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using DVLD.Desktop.Theme;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DVLD.Desktop.Controls
@@ -9,6 +10,7 @@ namespace DVLD.Desktop.Controls
         {
             InitializeComponent();
 
+            ApplyTheme();
         }
 
         public void AddRow(string label, string value)
@@ -24,7 +26,7 @@ namespace DVLD.Desktop.Controls
             var lblKey = new Label
             {
                 Text = label,
-                ForeColor = Color.FromArgb(161, 161, 170),
+                ForeColor = ThemeManager.Current.TextSecondary,
                 AutoSize = true,
                 Margin = new Padding(0, 6, 12, 6),
                 Anchor = AnchorStyles.Left
@@ -34,7 +36,7 @@ namespace DVLD.Desktop.Controls
             var lblValue = new Label
             {
                 Text = string.IsNullOrWhiteSpace(value) ? "-" : value,
-                ForeColor = Color.FromArgb(249, 250, 251),
+                ForeColor = ThemeManager.Current.TextPrimary,
                 AutoSize = true,
                 Margin = new Padding(0, 6, 0, 6),
                 Anchor = AnchorStyles.Left
@@ -58,6 +60,17 @@ namespace DVLD.Desktop.Controls
         {
             get => lblCardTitle.Text;
             set => lblCardTitle.Text = value;
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            lblCardTitle.ForeColor = theme.TextPrimary;
+          //Same as Topbar Color
+            BackColor = theme.Surface;
+          //Was Transparent
+            tblRows.BackColor = theme.Surface;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Desktop.Theme;
+using System;
 using System.Windows.Forms;
 
 namespace DVLD.Desktop.Controls
@@ -13,6 +14,23 @@ namespace DVLD.Desktop.Controls
             this.Dock = DockStyle.Top;
             btnAction.Click += (s, e) => ActionClicked?.Invoke(this, EventArgs.Empty);
             btnBack.Click += (s, e) => BackClicked?.Invoke(this, EventArgs.Empty);
+
+            ApplyTheme();
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            BackColor = theme.Background;
+        // Action Button
+            btnAction.BackColor = theme.Primary;
+            btnAction.ForeColor = theme.TextPrimary;
+        // Back Button
+            btnBack.BackColor = theme.Background;
+            btnBack.ForeColor = theme.TextPrimary;
+        // Title Label
+            lblTitle.ForeColor = theme.TextPrimary;
         }
 
         public string Title

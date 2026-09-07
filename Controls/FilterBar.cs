@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Desktop.Theme;
+using System;
 using System.Windows.Forms;
 
 namespace DVLD.Desktop.Controls
@@ -22,6 +23,21 @@ namespace DVLD.Desktop.Controls
                     RaiseSearch();
                 }
             };
+
+            ApplyTheme();
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            BackColor = theme.Surface;
+            
+            btnSearch.BackColor = theme.Border;
+            btnSearch.ForeColor = theme.TextPrimary;
+            
+            txtSearch.BackColor = theme.InputBackground;
+            txtSearch.ForeColor = theme.TextPrimary;
         }
 
         public string PlaceholderText

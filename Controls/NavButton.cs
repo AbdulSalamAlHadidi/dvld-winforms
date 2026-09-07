@@ -1,9 +1,12 @@
-﻿using System;
+﻿using DVLD.Desktop.Theme;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,16 +16,17 @@ namespace DVLD.Desktop.Controls
     public partial class NavButton : UserControl
     {
         private bool _isActive;
-        private static readonly Color ColorNormalBack = Color.FromArgb(33,33,33);
-        private static readonly Color ColorHoverBack = Color.FromArgb(39, 39, 42);
-        private static readonly Color ColorActiveBack = Color.FromArgb(109, 40, 217);
-        private static readonly Color ColorNormalText = Color.FromArgb(161, 161, 170);
-        private static readonly Color ColorActiveText = Color.FromArgb(249, 250, 251);
+        private bool _isHovered;
         public event EventHandler NavClicked;
         public NavButton()
         {
             InitializeComponent();
             WireEvents();
+            ApplyTheme();
+        
+        // To avoid being called every time ApplyTheme is invoked.
+            pnlAccent.BackColor = ThemeManager.Current.Accent;
+
         }
 
         public string NavText 
@@ -36,52 +40,32 @@ namespace DVLD.Desktop.Controls
             get => _isActive;
             set
             {
-                _isActive = value;
-                ApplyVisualState();
-            }
-        }
-
-        private void ApplyVisualState()
-        {
-            if(_isActive)
-            {
-                BackColor = ColorActiveBack;
-                lblText.ForeColor = ColorActiveText;
-                pnlAccent.Visible = true;
-            }
-            else
-            {
-                BackColor = ColorNormalBack;
-                lblText.ForeColor = ColorNormalText;
-                pnlAccent.Visible = false;
+                if (_isActive != value)
+                {
+                    _isActive = value;
+                    ApplyTheme();
+                }
             }
         }
 
         private void WireEvents()
         {
-            this.MouseEnter += NavButton_MouseEnter;
-            this.MouseLeave += NavButton_MouseLeave;
-            this.Click += NavButton_Click;
+            this.MouseEnter += (s, e) => { _isHovered = true; ApplyTheme(); };
+            this.MouseLeave += (s, e) => { _isHovered = false; ApplyTheme(); };
+            this.Click += (s, e) => NavClicked?.Invoke(this, EventArgs.Empty);
 
-            lblText.MouseEnter += NavButton_MouseEnter;
-            lblText.MouseLeave += NavButton_MouseLeave;
-            lblText.Click += NavButton_Click;
-        }
-
-        private void NavButton_MouseEnter(object sender,EventArgs e)
-        {
-            if (!_isActive)
-                BackColor = ColorHoverBack;
-        }
-        private void NavButton_MouseLeave(object sender,EventArgs e)
-        {
-            if (!_isActive)
-                BackColor = ColorNormalBack;
-        }
-        private void NavButton_Click(object sender,EventArgs e)
-        {
-            NavClicked?.Invoke(this, EventArgs.Empty);
+            lblText.MouseEnter += (s, e) => { _isHovered = true; ApplyTheme(); };
+            lblText.MouseLeave += (s, e) => { _isHovered = false; ApplyTheme(); };
+            lblText.Click += (s, e) => NavClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            BackColor = _isActive ? theme.Primary : (_isHovered ? theme.HoverBackground : theme.Sidebar);
+            lblText.ForeColor = _isActive ? theme.TextPrimary : theme.TextSecondary;
+            pnlAccent.Visible = _isActive;
+        }       
     }
 }

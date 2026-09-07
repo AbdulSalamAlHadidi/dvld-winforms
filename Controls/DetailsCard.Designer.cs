@@ -36,7 +36,6 @@
             // 
             this.lblCardTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCardTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.lblCardTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.lblCardTitle.Location = new System.Drawing.Point(20, 20);
             this.lblCardTitle.Name = "lblCardTitle";
             this.lblCardTitle.Size = new System.Drawing.Size(300, 30);
@@ -46,7 +45,6 @@
             // tblRows
             // 
             this.tblRows.AutoSize = true;
-            this.tblRows.BackColor = System.Drawing.Color.Transparent;
             this.tblRows.ColumnCount = 2;
             this.tblRows.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tblRows.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -64,7 +62,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.Controls.Add(this.tblRows);
             this.Controls.Add(this.lblCardTitle);
             this.Margin = new System.Windows.Forms.Padding(12);
