@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD.Desktop.Froms.Dialogs;
 using DVLD.Desktop.Navigation;
+using DVLD.Desktop.Theme;
 
 namespace DVLD.Desktop.Pages.People
 {
@@ -34,11 +35,12 @@ namespace DVLD.Desktop.Pages.People
 
             dgvPeople.CellContentClick += DgvPeople_CellContentClick;
 
+            ApplyTheme();
+
         }
 
         private void ConfigurePeopleGrid()
         {
-
             //General Settings
             dgvPeople.AutoGenerateColumns = false;
             dgvPeople.AllowUserToAddRows = false;
@@ -48,21 +50,12 @@ namespace DVLD.Desktop.Pages.People
             dgvPeople.MultiSelect = false;
             dgvPeople.ReadOnly = true;
             dgvPeople.BorderStyle = BorderStyle.None;
-            dgvPeople.BackgroundColor = Color.FromArgb(18, 18, 18);
-            dgvPeople.GridColor = Color.FromArgb(55, 65, 81);
             dgvPeople.EnableHeadersVisualStyles = false;
 
             //Column Header Formatting
-            dgvPeople.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 41, 55);
-            dgvPeople.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(249, 250, 251);
-            dgvPeople.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.5f);
             dgvPeople.ColumnHeadersHeight = 40;
 
             //Cell Formatting
-            dgvPeople.DefaultCellStyle.BackColor = Color.FromArgb(31, 41, 55);
-            dgvPeople.DefaultCellStyle.ForeColor = Color.FromArgb(249, 250, 251);
-            dgvPeople.DefaultCellStyle.SelectionBackColor = Color.FromArgb(109, 40, 217);
-            dgvPeople.DefaultCellStyle.SelectionForeColor = Color.FromArgb(249, 250, 251);
             dgvPeople.RowTemplate.Height = 42;
 
             //Manually add Columns
@@ -80,11 +73,7 @@ namespace DVLD.Desktop.Pages.People
             var colEdit = new DataGridViewButtonColumn { Name = "colEdit", HeaderText = "", Text = "Edit", UseColumnTextForButtonValue = true, Width = 70, FlatStyle = FlatStyle.Flat };
             var colDelete = new DataGridViewButtonColumn { Name = "colDelete", HeaderText = "", Text = "Delete", UseColumnTextForButtonValue = true, Width = 70, FlatStyle = FlatStyle.Flat };
 
-            colView.DefaultCellStyle.BackColor = Color.FromArgb(55, 65, 81);
-            colEdit.DefaultCellStyle.BackColor = Color.FromArgb(55, 65, 81);
-            colDelete.DefaultCellStyle.BackColor = Color.FromArgb(239, 68, 68);
-            colView.DefaultCellStyle.ForeColor = colEdit.DefaultCellStyle.ForeColor = colDelete.DefaultCellStyle.ForeColor = Color.FromArgb(249, 250, 251);
-
+            
             dgvPeople.Columns.Add(colView);
             dgvPeople.Columns.Add(colEdit);
             dgvPeople.Columns.Add(colDelete);
@@ -167,6 +156,50 @@ namespace DVLD.Desktop.Pages.People
                     break;
             }
         }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            // خلفية التحكم الرئيسي
+            BackColor = theme.Background;
+
+            // إعدادات الجدول
+            dgvPeople.BackgroundColor = theme.Background;
+            dgvPeople.GridColor = theme.Border;
+
+            // رأس الجدول
+            dgvPeople.ColumnHeadersDefaultCellStyle.BackColor = theme.Surface;
+            dgvPeople.ColumnHeadersDefaultCellStyle.ForeColor = theme.TextPrimary;
+            dgvPeople.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.5f);
+
+            // خلايا الجدول
+            dgvPeople.DefaultCellStyle.BackColor = theme.Surface;
+            dgvPeople.DefaultCellStyle.ForeColor = theme.TextPrimary;
+            dgvPeople.DefaultCellStyle.SelectionBackColor = theme.Primary;
+            dgvPeople.DefaultCellStyle.SelectionForeColor = theme.TextPrimary;
+
+            // تحديث ألوان أزرار الأعمدة (إذا كانت موجودة)
+            if (dgvPeople.Columns.Contains("colView"))
+            {
+                var colView = dgvPeople.Columns["colView"] as DataGridViewButtonColumn;
+                colView.DefaultCellStyle.BackColor = theme.Border;
+                colView.DefaultCellStyle.ForeColor = theme.TextPrimary;
+            }
+            if (dgvPeople.Columns.Contains("colEdit"))
+            {
+                var colEdit = dgvPeople.Columns["colEdit"] as DataGridViewButtonColumn;
+                colEdit.DefaultCellStyle.BackColor = theme.Border;
+                colEdit.DefaultCellStyle.ForeColor = theme.TextPrimary;
+            }
+            if (dgvPeople.Columns.Contains("colDelete"))
+            {
+                var colDelete = dgvPeople.Columns["colDelete"] as DataGridViewButtonColumn;
+                colDelete.DefaultCellStyle.BackColor = theme.Danger;
+                colDelete.DefaultCellStyle.ForeColor = theme.TextPrimary;
+            }
+        }
+
     }
 
 }

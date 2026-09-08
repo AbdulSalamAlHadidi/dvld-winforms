@@ -35,7 +35,6 @@
             // pageHeader
             // 
             this.pageHeader.ActionText = "Edit";
-            this.pageHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.pageHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageHeader.Location = new System.Drawing.Point(0, 0);
             this.pageHeader.MaximumSize = new System.Drawing.Size(9999, 64);
@@ -61,7 +60,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.Controls.Add(this.flowCards);
             this.Controls.Add(this.pageHeader);
             this.Name = "PersonDetailsControl";

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Desktop.Theme;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace DVLD.Desktop.Pages.Dashboard
         public DashboardControl()
         {
             InitializeComponent();
+            ApplyTheme();
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+
+            label1.ForeColor = theme.TextPrimary;
+            
+            BackColor = theme.Background;
         }
     }
 }

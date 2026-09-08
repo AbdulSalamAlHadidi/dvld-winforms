@@ -1,5 +1,6 @@
 ﻿using DVLD.Desktop.Controls;
 using DVLD.Desktop.Navigation;
+using DVLD.Desktop.Theme;
 using System.Windows.Forms;
 
 namespace DVLD.Desktop.Pages.People
@@ -19,6 +20,8 @@ namespace DVLD.Desktop.Pages.People
             pageHeader.BackClicked += (s, e) => Navigation?.GoBack();
 
             BuildCards();
+
+            ApplyTheme();
         }
 
         private void BuildCards()
@@ -47,12 +50,19 @@ namespace DVLD.Desktop.Pages.People
                 CardTitle = "System Information"
             };
             systemCard.AddRow("Person ID", _person.Id.ToString());
-           
+
 
             // إضافة البطاقات إلى الـ FlowLayoutPanel
             flowCards.Controls.Add(personalCard);
             flowCards.Controls.Add(contactCard);
             flowCards.Controls.Add(systemCard);
+        }
+
+        private void ApplyTheme()
+        {
+            var theme = ThemeManager.Current;
+            
+            BackColor = theme.Background;
         }
     }
 }
