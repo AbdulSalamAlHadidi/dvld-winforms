@@ -60,9 +60,15 @@ Forms are reserved for login, dialogs, confirmations, and other modal workflows.
 
 ## Theme Direction
 
-Initial direction: Dark theme.
+All colors are centralized in `Theme/AppTheme.cs` (contract) and `Theme/DarkTheme.cs`
+(current values), accessed exclusively through `ThemeManager.Current`.
 
-Theme colors, typography, spacing, and reusable visual styles will be centralized later in the Theme folder.
+Rule: no `ColorTranslator.FromHtml(...)` call should exist outside `DarkTheme.cs`.
+Every control and page reads colors via `ThemeManager.Current.<PropertyName>`,
+never by hardcoding a hex value.
+
+`ThemeManager.SetTheme(AppTheme)` and the `ThemeManager.ThemeChanged` event exist
+now to support a future `LightTheme` without touching individual controls again.
 
 ## Reusable Controls
 
