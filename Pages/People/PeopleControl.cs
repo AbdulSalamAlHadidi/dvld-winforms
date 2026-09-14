@@ -129,7 +129,7 @@ namespace DVLD.Desktop.Pages.People
             {
                 case "colView":
                     // فتح صفحة التفاصيل مع تمرير Navigation
-                    var details = new PersonDetailsControl(person) { Navigation = Navigation };
+                    var details = new PersonDetailsControl(person);
                     Navigation?.NavigateTo(details);
                     break;
 

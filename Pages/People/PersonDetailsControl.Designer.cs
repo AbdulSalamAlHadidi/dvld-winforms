@@ -41,7 +41,6 @@
             this.pageHeader.MinimumSize = new System.Drawing.Size(1, 64);
             this.pageHeader.Name = "pageHeader";
             this.pageHeader.ShowAction = true;
-            this.pageHeader.ShowBackButton = true;
             this.pageHeader.Size = new System.Drawing.Size(841, 64);
             this.pageHeader.TabIndex = 0;
             this.pageHeader.Title = "Person Details";

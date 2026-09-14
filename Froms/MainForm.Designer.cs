@@ -33,12 +33,14 @@
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.lblDVLD = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pnlTopbar.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTopbar
             // 
+            this.pnlTopbar.Controls.Add(this.btnBack);
             this.pnlTopbar.Controls.Add(this.lblPageTitle);
             this.pnlTopbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopbar.Location = new System.Drawing.Point(250, 0);
@@ -51,7 +53,7 @@
             // 
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageTitle.Location = new System.Drawing.Point(24, 22);
+            this.lblPageTitle.Location = new System.Drawing.Point(79, 20);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(118, 30);
             this.lblPageTitle.TabIndex = 0;
@@ -86,6 +88,21 @@
             this.lblDVLD.TabIndex = 3;
             this.lblDVLD.Text = "DVLD \nDriver & Vehicle License Department";
             // 
+            // btnBack
+            // 
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnBack.Location = new System.Drawing.Point(24, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.btnBack.Size = new System.Drawing.Size(40, 70);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "←";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -114,5 +131,6 @@
         private System.Windows.Forms.Label lblPageTitle;
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Label lblDVLD;
+        private System.Windows.Forms.Button btnBack;
     }
 }

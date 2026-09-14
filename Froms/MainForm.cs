@@ -25,9 +25,16 @@ namespace DVLD.Desktop.Froms
             InitializeComponent();
 
             BuildSidebarNavigation();
+            
             _navigationService = new NavigationService(pnlContent);
-            NavigateAndHighlight(navDashboard, new DashboardControl(), "Dashboard");
+            _navigationService.CanGoBackChanged += (s, e) =>
+            {
+                btnBack.Visible = _navigationService.CanGoBack;
+            };
 
+            btnBack.Click += (s, e) => _navigationService?.GoBack();
+            
+            NavigateAndHighlight(navDashboard, new DashboardControl(), "Dashboard");
             ApplyTheme();
         }
         private NavButton navDashboard;
@@ -53,7 +60,7 @@ namespace DVLD.Desktop.Froms
             {
                 var peoplePage = new PeopleControl { Navigation = _navigationService };
                 NavigateAndHighlight(navPeople, peoplePage, "People");
-            };          
+            };
             navDrivers.NavClicked += (s, e) => MessageBox.Show("Drivers page not implemented yet.");
             navApplications.NavClicked += (s, e) => MessageBox.Show("Applications page not implemented yet.");
             navLicenses.NavClicked += (s, e) => MessageBox.Show("Licenses page not implemented yet.");
@@ -73,7 +80,7 @@ namespace DVLD.Desktop.Froms
         private NavButton CreateNavButton(string text)
         {
             var navButton = new NavButton
-            {            
+            {
                 NavText = text,
                 Dock = DockStyle.Top
             };
@@ -100,11 +107,14 @@ namespace DVLD.Desktop.Froms
             pnlSidebar.BackColor = theme.Sidebar;
             pnlTopbar.BackColor = theme.Surface;
             pnlContent.BackColor = theme.Background;
-            
+
             BackColor = theme.Background;
-            
+
             lblPageTitle.ForeColor = theme.TextPrimary;
             lblDVLD.ForeColor = theme.TextPrimary;
+
+            btnBack.BackColor = theme.Surface;
+            btnBack.ForeColor = theme.TextPrimary;
         }
     }
 }

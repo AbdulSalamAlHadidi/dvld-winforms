@@ -7,7 +7,6 @@ namespace DVLD.Desktop.Pages.People
 {
     public partial class PersonDetailsControl : UserControl
     {
-        public NavigationService Navigation { get; set; }
         private readonly PersonRow _person;
         public PersonDetailsControl(PersonRow person)
         {
@@ -16,8 +15,6 @@ namespace DVLD.Desktop.Pages.People
             _person = person;
 
             pageHeader.ActionClicked += (s, e) => MessageBox.Show("Edit Person form not implemented yet.");
-
-            pageHeader.BackClicked += (s, e) => Navigation?.GoBack();
 
             BuildCards();
 
